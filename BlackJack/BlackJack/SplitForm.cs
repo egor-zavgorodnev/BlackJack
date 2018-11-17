@@ -123,9 +123,14 @@ namespace BlackJack
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            BlackJack f = new BlackJack();
-            f.HitButton.Visible = false;
-            f.StandButton.Visible = false;
+            BlackJack main = Owner as BlackJack;
+            if (main != null)
+            { 
+                main.HitButton.Visible = false;
+                main.StandButton.Visible = false;
+                main.buttonSplit.Visible = false;
+            }
+
             Close();
         }
     }    

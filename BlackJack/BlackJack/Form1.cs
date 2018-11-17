@@ -93,8 +93,9 @@ namespace BlackJack
          
         private void button2_Click(object sender, EventArgs e)
         {
-            Split f = new Split(); 
-            f.Show(); 
+            Split f = new Split();
+            f.Owner = this; 
+            f.ShowDialog();
         }
 
         private void buttonStatistics_Click(object sender, EventArgs e)

@@ -325,10 +325,10 @@
         private System.Windows.Forms.Label D1;
         private System.Windows.Forms.Label invisLabel;
         private System.Windows.Forms.Label labelHasA;
-        private System.Windows.Forms.Button buttonSplit;
         private System.Windows.Forms.Button buttonStatistics;
         public System.Windows.Forms.Button HitButton;
         public System.Windows.Forms.Button StandButton;
+        public System.Windows.Forms.Button buttonSplit;
     }
 }
 
