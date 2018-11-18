@@ -480,7 +480,7 @@ namespace BlackJack
                 Statistic.AddDealerWin(); 
                 return true;
             } 
-
+             
             return false;   
              
         } 

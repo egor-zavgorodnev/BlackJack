@@ -48,6 +48,38 @@ namespace BlackJack
             {
                 labelHasA1.Text = "A(1 или 11)"; //выводим соотв текст 
             }
+
+            if (game1.IsOverflow()) //если перебор у игрока 
+            {
+                // присуждаем победу дилеру, заканчиваем игру 
+                //dealersWinsText.Text = Statistic.GetDealerWins().ToString(); 
+                info1.Text = "Победа дилера! Перебор у игрока";
+                 
+                game2.GameStart(); 
+
+                //выводим на форму первые 2 карты игрока и дилера 
+                textboxPlayerCards2.Text = game2.PlayerCards; 
+                D1.Text = game1.DealerCards;
+                // их очки  
+                playerScore2.Text = game2.GetTotalPlayer().ToString();
+                dealerScore.Text = game1.GetTotalDealer().ToString();
+
+                //выводим кнопки hit2 и stand2    
+                HitButton2.Visible = true;
+                StandButton2.Visible = true;
+
+                // очищаем label с тузом  
+                labelHasA1.Text = "";
+
+                //скрываем hit1 и stand1
+                HitButton1.Visible = false;
+                StandButton1.Visible = false;
+
+                if (game2.HasA()) //если в картах игрока имеется туз
+                {
+                    labelHasA2.Text = "A(1 или 11)"; //выводим соотв текст 
+                } 
+            }
  
             // записываем новую карту 
             playerScore.Text = game1.GetTotalPlayer().ToString();
@@ -90,6 +122,28 @@ namespace BlackJack
             if (game2.HasA()) //если в картах игрока имеется туз
             {
                 labelHasA2.Text = "A(1 или 11)"; //выводим соотв текст 
+            }
+              
+            if (game2.IsOverflow()) //если перебор у игрока 
+            {
+                game2.SplitDealerMove();
+                //выводим очки и карты дилера
+                dealerScore.Text = game2.GetTotalDealer().ToString();
+                D1.Text = game2.DealerCards;
+                //сообщение о конце игры 
+                info2.Text = game2.EndMessage();
+                // очищаем label с тузом  
+                labelHasA.Text = "";
+                // скрываем кнопки  
+                HitButton2.Visible = false;
+                StandButton2.Visible = false;
+
+                // делаем totaldealer общим для двух игр 
+                game1.totaldealer = game2.totaldealer;
+                game1.EndCheck();
+                info1.Text = game1.EndMessage();
+
+                buttonClose.Visible = true; 
             } 
 
             // записываем новую карту 

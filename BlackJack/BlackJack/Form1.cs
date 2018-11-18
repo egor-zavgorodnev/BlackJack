@@ -25,6 +25,8 @@ namespace BlackJack
          
         private void newGame_Click(object sender, EventArgs e)
         {
+            // очищаем label с тузом  
+            labelHasA.Text = ""; 
             blackjack.EndGame();   
             blackjack.GameStart(); 
 
@@ -60,7 +62,10 @@ namespace BlackJack
             if (blackjack.HasA()) //если в картах игрока имеется туз
             {
                 labelHasA.Text = "A(1 или 11)"; //выводим соотв текст 
-            }  
+            }
+
+            if (buttonSplit.Visible == true) 
+                buttonSplit.Visible = false;
 
             if (blackjack.IsOverflow()) //если перебор у игрока 
             { 
