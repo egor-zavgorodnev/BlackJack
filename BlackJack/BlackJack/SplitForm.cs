@@ -27,7 +27,11 @@ namespace BlackJack
         private void Split_Load(object sender, EventArgs e)
         {
             game1.SplitGame1();//Берем карту 1ую карту из основной игры
+            
             game2.SplitGame2();//Берем карту 2ую карту из основной игры
+            playerScore2.Text = game2.GetTotalPlayer().ToString();
+            textboxPlayerCards2.Text = game2.PlayerCards;// выводим очки игрока
+            
             game2.GameSplitDealer();//Даем дилеру 2 карты
 
             dealerScore.Text = game2.GetTotalDealer().ToString();// выводим очки дилера
