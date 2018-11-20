@@ -36,8 +36,6 @@ namespace BlackJack
                 buttonSplit.Visible = true;
             }
                 
-
-
             //выводим на форму первые 2 карты дилера и игрока 
             D1.Text = blackjack.DealerCards;                    
             textboxPlayerCards.Text = blackjack.PlayerCards;
@@ -53,7 +51,7 @@ namespace BlackJack
             if (blackjack.HasA()) //если в картах игрока имеется туз
             {
                 labelHasA.Text = "A(1 или 11)"; //выводим соотв текст 
-            }   
+            }
              
             info.Text = "Берите карты или остановитесь"; //проверка на 21 после начала игры 
             if (blackjack.GetTotalPlayer() == 21) HitButton.Visible = false;
@@ -61,13 +59,16 @@ namespace BlackJack
 
         private void HitButton_Click(object sender, EventArgs e)
         {
-            blackjack.Hit();
+            // очищаем label с тузом  
+            labelHasA.Text = "";
 
+            blackjack.Hit(Game.PlayerCardsList); 
+             
             if (blackjack.HasA()) //если в картах игрока имеется туз
             {
                 labelHasA.Text = "A(1 или 11)"; //выводим соотв текст 
             }
-
+             
             if (buttonSplit.Visible == true) 
                 buttonSplit.Visible = false;
 
@@ -87,7 +88,7 @@ namespace BlackJack
          
         private void StandButton_Click(object sender, EventArgs e)
         { 
-            blackjack.DealerMove(); 
+            blackjack.DealerMove();  
             //выводим очки и карты дилера
             dealerScore.Text = blackjack.GetTotalDealer().ToString();
             D1.Text = blackjack.DealerCards;

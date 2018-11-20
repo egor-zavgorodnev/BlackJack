@@ -19,29 +19,32 @@ namespace BlackJack
          
         Game game1 = new Game();
         Game game2 = new Game();
+         
         /// <summary>
-        /// Инициализация при загрузке формы
-        /// </summary>
+        /// Инициализация при загрузке формы 
+        /// </summary>  
         /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="e"></param> 
         private void Split_Load(object sender, EventArgs e)
         {
-            game1.SplitGame1();//Берем карту 1ую карту из основной игры
-            
-            game2.SplitGame2();//Берем карту 2ую карту из основной игры
-            playerScore2.Text = game2.GetTotalPlayer().ToString();
-            textboxPlayerCards2.Text = game2.PlayerCards;// выводим очки игрока
-            
-            game2.GameSplitDealer();//Даем дилеру 2 карты
-
-            dealerScore.Text = game2.GetTotalDealer().ToString();// выводим очки дилера
-            D1.Text = game2.DealerCards;
-
-            //выводим на форму первые 2 карты игрока  
-            textboxPlayerCards.Text = game1.PlayerCards; 
-            // его очки
+            // Начало 1 и второй игры 
+            game1.SplitGame1Start(); 
+             
+            game2.SplitGame2Start();
+               
+            // очки игрока (игра 1)
             playerScore.Text = game1.GetTotalPlayer().ToString();
+            textboxPlayerCards.Text = game1.PlayerCards; 
               
+            // очки игрока (игра 2) 
+            playerScore2.Text = game2.GetTotalPlayer().ToString();
+            textboxPlayerCards2.Text = game2.PlayerCards;
+
+            // выводим очки дилера 
+            dealerScore.Text = game2.GetTotalDealer().ToString();
+            D1.Text = game2.DealerCards; 
+             
+               
             //выводим кнопки hit и stand 
             HitButton1.Visible = true;
             StandButton1.Visible = true; 
@@ -54,8 +57,11 @@ namespace BlackJack
         }
 
         private void HitButton1_Click(object sender, EventArgs e)
-        {
-            game1.Hit();
+        { 
+            game1.Hit(game1.PlayerCardsList_Split1);
+
+            // очищаем label с тузом  
+            labelHasA.Text = ""; 
 
             if (game1.HasA()) //если в картах игрока имеется туз
             {
@@ -63,12 +69,11 @@ namespace BlackJack
             }
 
             if (game1.IsOverflow()) //если перебор у игрока 
-            {
+            { 
                 // присуждаем победу дилеру, заканчиваем игру 
                 //dealersWinsText.Text = Statistic.GetDealerWins().ToString(); 
                 info1.Text = "Победа дилера! Перебор у игрока";
-
-
+                  
                 //выводим на форму первые 2 карты игрока и дилера 
                 textboxPlayerCards2.Text = game2.PlayerCards; 
                 D1.Text = game2.DealerCards;
@@ -96,20 +101,13 @@ namespace BlackJack
             // записываем новую карту 
             playerScore.Text = game1.GetTotalPlayer().ToString();
             textboxPlayerCards.Text = game1.PlayerCards;
+            // скрываем кнопку hit при 21 
             if (game1.GetTotalPlayer() == 21) HitButton1.Visible = false;
         }
                 
         private void StandButton1_Click(object sender, EventArgs e)
         {
-           
-
-            //выводим на форму первые 2 карты игрока и дилера 
-            textboxPlayerCards2.Text = game2.PlayerCards;
-            D1.Text = game2.DealerCards;
-            // их очки   
-            playerScore2.Text = game2.GetTotalPlayer().ToString();
-            dealerScore.Text = game2.GetTotalDealer().ToString();
-
+               
             //выводим кнопки hit2 и stand2     
             HitButton2.Visible = true;
             StandButton2.Visible = true;
@@ -125,14 +123,18 @@ namespace BlackJack
             {
                 labelHasA2.Text = "A(1 или 11)"; //выводим соотв текст 
             }
+            // скрываем кнопку hit при 21
             if (game2.GetTotalPlayer() == 21) HitButton2.Visible = false;
 
         } 
 
         private void HitButton2_Click(object sender, EventArgs e)
         {
-            game2.Hit();
-             
+            game2.Hit(game2.PlayerCardsList_Split2);
+
+            // очищаем label с тузом  
+            labelHasA.Text = "";
+
             if (game2.HasA()) //если в картах игрока имеется туз
             {
                 labelHasA2.Text = "A(1 или 11)"; //выводим соотв текст 
@@ -155,7 +157,7 @@ namespace BlackJack
                 // делаем totaldealer общим для двух игр 
                 game1.totaldealer = game2.totaldealer;
                 game1.EndCheck();
-                info1.Text = game1.EndMessage();
+                info1.Text = game1.EndMessage(); 
 
                 buttonClose.Visible = true; 
             } 
@@ -163,6 +165,7 @@ namespace BlackJack
             // записываем новую карту 
             playerScore2.Text = game2.GetTotalPlayer().ToString();
             textboxPlayerCards2.Text = game2.PlayerCards;
+            // скрываем кнопку hit при 21 
             if (game2.GetTotalPlayer() == 21) HitButton2.Visible = false;
 
         } 
