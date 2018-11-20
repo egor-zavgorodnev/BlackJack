@@ -28,3 +28,25 @@ F:\2 курс\Новиков\BlackJack\BlackJack\bin\Debug\normnfd.nlp
 F:\2 курс\Новиков\BlackJack\BlackJack\bin\Debug\normnfkc.nlp
 F:\2 курс\Новиков\BlackJack\BlackJack\bin\Debug\normnfkd.nlp
 H:\2 курс\Новиков\BlackJack\BlackJack\obj\Debug\BlackJack.Split.resources
+G:\2 курс\Новиков\BlackJack\BlackJack\bin\Debug\BlackJack.exe.config
+G:\2 курс\Новиков\BlackJack\BlackJack\bin\Debug\BlackJack.exe
+G:\2 курс\Новиков\BlackJack\BlackJack\bin\Debug\BlackJack.pdb
+G:\2 курс\Новиков\BlackJack\BlackJack\obj\Debug\BlackJack.csprojResolveAssemblyReference.cache
+G:\2 курс\Новиков\BlackJack\BlackJack\obj\Debug\BlackJack.BlackJack.resources
+G:\2 курс\Новиков\BlackJack\BlackJack\obj\Debug\BlackJack.Properties.Resources.resources
+G:\2 курс\Новиков\BlackJack\BlackJack\obj\Debug\BlackJack.Split.resources
+G:\2 курс\Новиков\BlackJack\BlackJack\obj\Debug\BlackJack.csproj.GenerateResource.cache
+G:\2 курс\Новиков\BlackJack\BlackJack\obj\Debug\BlackJack.csproj.CoreCompileInputs.cache
+G:\2 курс\Новиков\BlackJack\BlackJack\obj\Debug\BlackJack.exe
+G:\2 курс\Новиков\BlackJack\BlackJack\obj\Debug\BlackJack.pdb
+C:\Users\Светлана\Desktop\BlackJack\BlackJack\bin\Debug\BlackJack.exe.config
+C:\Users\Светлана\Desktop\BlackJack\BlackJack\bin\Debug\BlackJack.exe
+C:\Users\Светлана\Desktop\BlackJack\BlackJack\bin\Debug\BlackJack.pdb
+C:\Users\Светлана\Desktop\BlackJack\BlackJack\obj\Debug\BlackJack.csprojResolveAssemblyReference.cache
+C:\Users\Светлана\Desktop\BlackJack\BlackJack\obj\Debug\BlackJack.BlackJack.resources
+C:\Users\Светлана\Desktop\BlackJack\BlackJack\obj\Debug\BlackJack.Properties.Resources.resources
+C:\Users\Светлана\Desktop\BlackJack\BlackJack\obj\Debug\BlackJack.Split.resources
+C:\Users\Светлана\Desktop\BlackJack\BlackJack\obj\Debug\BlackJack.csproj.GenerateResource.cache
+C:\Users\Светлана\Desktop\BlackJack\BlackJack\obj\Debug\BlackJack.csproj.CoreCompileInputs.cache
+C:\Users\Светлана\Desktop\BlackJack\BlackJack\obj\Debug\BlackJack.exe
+C:\Users\Светлана\Desktop\BlackJack\BlackJack\obj\Debug\BlackJack.pdb

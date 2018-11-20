@@ -19,10 +19,19 @@ namespace BlackJack
          
         Game game1 = new Game();
         Game game2 = new Game();
-
+        /// <summary>
+        /// Инициализация при загрузке формы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Split_Load(object sender, EventArgs e)
         {
-            game1.GameStartForPlayer();
+            game1.SplitGame1();//Берем карту 1ую карту из основной игры
+            game2.SplitGame2();//Берем карту 2ую карту из основной игры
+            game2.GameSplitDealer();//Даем дилеру 2 карты
+
+            dealerScore.Text = game2.GetTotalDealer().ToString();// выводим очки дилера
+            D1.Text = game2.DealerCards;
 
             //выводим на форму первые 2 карты игрока  
             textboxPlayerCards.Text = game1.PlayerCards; 
@@ -36,8 +45,8 @@ namespace BlackJack
             if (game1.HasA()) //если в картах игрока имеется туз
             {
                 labelHasA1.Text = "A(1 или 11)"; //выводим соотв текст 
-            } 
-              
+            }
+            
         }
 
         private void HitButton1_Click(object sender, EventArgs e)
@@ -54,16 +63,15 @@ namespace BlackJack
                 // присуждаем победу дилеру, заканчиваем игру 
                 //dealersWinsText.Text = Statistic.GetDealerWins().ToString(); 
                 info1.Text = "Победа дилера! Перебор у игрока";
-                 
-                game2.GameStart(); 
+
 
                 //выводим на форму первые 2 карты игрока и дилера 
                 textboxPlayerCards2.Text = game2.PlayerCards; 
-                D1.Text = game1.DealerCards;
+                D1.Text = game2.DealerCards;
                 // их очки  
                 playerScore2.Text = game2.GetTotalPlayer().ToString();
-                dealerScore.Text = game1.GetTotalDealer().ToString();
-
+                dealerScore.Text = game2.GetTotalDealer().ToString();
+                 
                 //выводим кнопки hit2 и stand2    
                 HitButton2.Visible = true;
                 StandButton2.Visible = true;
@@ -83,21 +91,22 @@ namespace BlackJack
  
             // записываем новую карту 
             playerScore.Text = game1.GetTotalPlayer().ToString();
-            textboxPlayerCards.Text = game1.PlayerCards; 
+            textboxPlayerCards.Text = game1.PlayerCards;
+            if (game1.GetTotalPlayer() == 21) HitButton1.Visible = false;
         }
-
+                
         private void StandButton1_Click(object sender, EventArgs e)
         {
-            game2.GameStart(); 
-               
+           
+
             //выводим на форму первые 2 карты игрока и дилера 
             textboxPlayerCards2.Text = game2.PlayerCards;
-            D1.Text = game1.DealerCards;
-            // их очки  
+            D1.Text = game2.DealerCards;
+            // их очки   
             playerScore2.Text = game2.GetTotalPlayer().ToString();
-            dealerScore.Text = game1.GetTotalDealer().ToString();
+            dealerScore.Text = game2.GetTotalDealer().ToString();
 
-            //выводим кнопки hit2 и stand2    
+            //выводим кнопки hit2 и stand2     
             HitButton2.Visible = true;
             StandButton2.Visible = true;
 
@@ -112,7 +121,8 @@ namespace BlackJack
             {
                 labelHasA2.Text = "A(1 или 11)"; //выводим соотв текст 
             }
-  
+            if (game2.GetTotalPlayer() == 21) HitButton2.Visible = false;
+
         } 
 
         private void HitButton2_Click(object sender, EventArgs e)
@@ -149,6 +159,7 @@ namespace BlackJack
             // записываем новую карту 
             playerScore2.Text = game2.GetTotalPlayer().ToString();
             textboxPlayerCards2.Text = game2.PlayerCards;
+            if (game2.GetTotalPlayer() == 21) HitButton2.Visible = false;
 
         } 
 
@@ -177,12 +188,13 @@ namespace BlackJack
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            BlackJack main = Owner as BlackJack;
+            BlackJack main = Owner as BlackJack; 
             if (main != null)
             { 
                 main.HitButton.Visible = false;
                 main.StandButton.Visible = false;
                 main.buttonSplit.Visible = false;
+                
             }
 
             Close();

@@ -222,9 +222,14 @@ namespace BlackJack
 
         public string DealerCards; //карты дилера в строке 
   
-        public List<Card> PlayerCardsList = new List<Card>(); //список карт игрока
+        public static List<Card> PlayerCardsList = new List<Card>(); //список карт игрока
 
-        public string PlayerCards; //карты игрока в строке 
+        public string PlayerCards; //карты игрока в строке  
+
+        public Card PlayerFirstCard{ get {return PlayerCardsList[0];} }
+
+
+        public Card PlayerSecondCard { get { return PlayerCardsList[1]; } }
 
 
         public int CardCount { get; set; }
@@ -257,7 +262,7 @@ namespace BlackJack
         public void DealerAddCard()
         { 
             Card newcard = _deck.PickCard();
-            //тут ошибка  
+ 
             totaldealer += newcard.GetValue(); 
             DealerCards += newcard.GetCaption() + " "; 
         }
@@ -398,6 +403,13 @@ namespace BlackJack
             DealerAddCard(); 
             DealerAddCard(); //игроку и дилеру дается по одной карте   
         }
+        public void GameSplitDealer()
+        {
+            _deck.Shuffle(CardCount);
+            DealerAddCard();
+            DealerAddCard(); //дилеру даються карты
+
+        }
         public void GameStartForPlayer()
         {
             _deck.Shuffle(CardCount); //перемешиваем колоду и берем из нее 11 карт 
@@ -405,6 +417,26 @@ namespace BlackJack
             PlayerAddCard(); 
             PlayerAddCard(); 
 
+        }
+        public void SplitGame1()
+        {
+
+            totalplayer += PlayerFirstCard.GetValue();
+            PlayerCards += PlayerFirstCard.GetCaption() + " ";
+
+            _deck.Shuffle(CardCount); //перемешиваем колоду и берем из нее 11 карт 
+
+            PlayerAddCard();
+
+        }
+        public void SplitGame2()
+        {
+            totalplayer += PlayerSecondCard.GetValue();
+            PlayerCards += PlayerSecondCard.GetCaption() + " ";
+
+            _deck.Shuffle(CardCount); //перемешиваем колоду и берем из нее 11 карт 
+
+            PlayerAddCard();
         }
 
 
@@ -417,7 +449,7 @@ namespace BlackJack
                 // dealer play
                 _deck.PickCard();
             }
-        }*/ 
+        }*/
 
         /// <summary>
         /// Ход дилера

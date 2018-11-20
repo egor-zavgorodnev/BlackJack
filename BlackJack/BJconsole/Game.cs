@@ -176,14 +176,11 @@ namespace BlackJack
 
         public string DealerCards; //карты дилера в строке
   
-        public List<Card> PlayerCardsList = new List<Card>(); //список карт игрока
+        public static List<Card> PlayerCardsList = new List<Card>(); //список карт игрока
 
         public string PlayerCards; //карты игрока в строке 
 
-        //Статистика  
-        public int dealerWins = 0; 
-        public int playerWins = 0;   
-        public int draws = 0; 
+        public static Card firstcard = PlayerCardsList[0];
 
         public int CardCount { get; set; }
 

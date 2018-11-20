@@ -32,7 +32,10 @@ namespace BlackJack
 
             buttonSplit.Visible = false;
             if (blackjack.SplitCheck())
-                buttonSplit.Visible = true; 
+            {
+                buttonSplit.Visible = true;
+            }
+                
 
 
             //выводим на форму первые 2 карты дилера и игрока 
@@ -53,6 +56,7 @@ namespace BlackJack
             }   
              
             info.Text = "Берите карты или остановитесь"; //проверка на 21 после начала игры 
+            if (blackjack.GetTotalPlayer() == 21) HitButton.Visible = false;
         } 
 
         private void HitButton_Click(object sender, EventArgs e)
@@ -77,7 +81,8 @@ namespace BlackJack
             }  
              // записываем новую карту 
             playerScore.Text = blackjack.GetTotalPlayer().ToString(); 
-            textboxPlayerCards.Text = blackjack.PlayerCards;  
+            textboxPlayerCards.Text = blackjack.PlayerCards;
+            if (blackjack.GetTotalPlayer() == 21) HitButton.Visible = false;
         }
          
         private void StandButton_Click(object sender, EventArgs e)
@@ -101,6 +106,7 @@ namespace BlackJack
             Split f = new Split();
             f.Owner = this; 
             f.ShowDialog();
+
         }
 
         private void buttonStatistics_Click(object sender, EventArgs e)
