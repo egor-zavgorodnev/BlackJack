@@ -15,32 +15,34 @@ namespace BlackJack
         public StatsForm()
         {
             InitializeComponent();
-        }
+        } 
 
        
 
         private void StatsForm_Load(object sender, EventArgs e)
         {
-            textBox1.Text = Statistic.GetDealerWins().ToString(); //Побед дилера
-            textBox2.Text = Statistic.GetPlayerWins().ToString(); //Побед игрока
-            textBox3.Text = Statistic.GetDraws().ToString(); //Ничьих
-           
-        }
-       
-        
-
-        private void button1_Click(object sender, EventArgs e)
+            labelDW.Text = Statistic.GetDealerWins().ToString(); //Побед дилера
+            labelPW.Text = Statistic.GetPlayerWins().ToString(); //Побед игрока
+            labelDraws.Text = Statistic.GetDraws().ToString(); //Ничьих
+        } 
+          
+         
+          
+        private void buttonOK_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close(); 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonReset_Click(object sender, EventArgs e)
         {
             Statistic.resetStat();
-            textBox1.Text = "0"; textBox2.Text = "0"; textBox3.Text = "0";
-            MessageBox.Show("Статистика сброшена!");
-            
 
+            labelDW.Text = String.Empty;
+            labelPW.Text = String.Empty;
+            labelDraws.Text = String.Empty;
+
+            MessageBox.Show("Статистика сброшена!");
+ 
         }
     }
 }
