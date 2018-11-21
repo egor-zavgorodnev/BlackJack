@@ -90,18 +90,25 @@ namespace BlackJack
   
         public static List<Card> PlayerCardsList = new List<Card>(); //список карт игрока , статический список для главной игры
 
-        public List<Card> PlayerCardsList_Split1 = new List<Card>(); //список карт игрока для сплита1
+        public static List<Card> DealerStartCardsList = new List<Card>(); //список карт дилера , статический список для главной игры
+        public List<Card> DealerSplitCardsList = new List<Card>(); //список карт дилера в сплите
+            
+        public List<Card> PlayerCardsList_Split1 = new List<Card>(); //список карт игрока для сплита1 
 
         public List<Card> PlayerCardsList_Split2 = new List<Card>(); //список карт игрока для сплита2 
          
         public string PlayerCards; //карты игрока в строке  
          
-        public Card PlayerFirstCard{ get { return PlayerCardsList[0];} }
-         
+        //первая и вторая карта игрока (для сплита)
+        public Card PlayerFirstCard{ get { return PlayerCardsList[0];} }  
         public Card PlayerSecondCard { get { return PlayerCardsList[1]; } }
 
-         
-        public int CardCount { get; set; }
+        //первая и вторая ката дилера (для сплита)  
+        public Card DealerFirstCard { get { return DealerStartCardsList[0]; } }
+        public Card DealerSecondCard { get { return DealerStartCardsList[1]; } }
+
+          
+        public int CardCount { get; set; } 
 
         public Game(int cardCount = 11) 
         {
@@ -126,13 +133,16 @@ namespace BlackJack
         }
          
         /// <summary>
-        /// Дилеру дается 1 карта
+        /// Дилеру дается 1 карта 
         /// </summary>
-        public void DealerAddCard()
+        public void DealerAddCard(List<Card> CurrentCardsList)
         { 
-            Card newcard = _deck.PickCard();
- 
-            totaldealer += newcard.GetValue(); 
+            Card newcard = _deck.PickCard();   
+            
+            totaldealer += newcard.GetValue();
+
+            CurrentCardsList.Add(newcard); 
+
             DealerCards += newcard.GetCaption() + " "; 
         }
           
@@ -242,7 +252,14 @@ namespace BlackJack
         { 
             totaldealer = 0;   
             totalplayer = 0;
+
             PlayerCardsList.Clear();
+            PlayerCardsList_Split1.Clear();
+            PlayerCardsList_Split2.Clear();
+
+            DealerSplitCardsList.Clear();
+            DealerStartCardsList.Clear();
+
             PlayerCards = ""; 
             DealerCards = ""; 
 
@@ -263,15 +280,15 @@ namespace BlackJack
         /// Начало игры: игроку и дилеру дается 2 карты  
         /// </summary> 
         public void GameStart()   
-        {
+        { 
 
             _deck.Shuffle(CardCount); //перемешиваем колоду и берем из нее 11 карт
 
             PlayerAddCard(PlayerCardsList);
             PlayerAddCard(PlayerCardsList);   
                
-            DealerAddCard();  
-            DealerAddCard(); //игроку и дилеру дается по одной карте   
+            DealerAddCard(DealerStartCardsList);  
+            DealerAddCard(DealerStartCardsList); //игроку и дилеру дается по одной карте   
 
             if (GetTotalDealer() == 22)
                 totaldealer = 2;
@@ -285,7 +302,7 @@ namespace BlackJack
             _deck.Shuffle(CardCount); //перемешиваем колоду и берем из нее 11 карт  
 
             //добавляем карты из основной игры в сплит-колоды 
-            PlayerCardsList_Split1.Add(PlayerFirstCard); 
+            PlayerCardsList_Split1.Add(PlayerFirstCard);
 
             // Берем карту из главной игры
             totalplayer += PlayerFirstCard.GetValue();
@@ -308,14 +325,22 @@ namespace BlackJack
             //добавляем карты из основной игры в сплит-колоды 
             PlayerCardsList_Split2.Add(PlayerSecondCard);
 
-            // Берем карту из главной игры 
+            DealerSplitCardsList.Add(DealerFirstCard);
+            DealerSplitCardsList.Add(DealerSecondCard);
+             
+            // Берем карту из главной игры  
             totalplayer += PlayerSecondCard.GetValue();
             PlayerCards += PlayerSecondCard.GetCaption() + " ";
+             
+            //Берем карты для дилера из главной игры 
+            totaldealer += DealerFirstCard.GetValue();
+            DealerCards += DealerFirstCard.GetCaption() + " ";
 
-            DealerAddCard();
-            DealerAddCard(); 
+            totaldealer += DealerSecondCard.GetValue();
+            DealerCards += DealerSecondCard.GetCaption() + " ";
+                      
 
-            PlayerAddCard(PlayerCardsList_Split2);
+            PlayerAddCard(PlayerCardsList_Split2); 
 
             if (GetTotalDealer() == 22)
                 totaldealer = 2; 
@@ -352,8 +377,8 @@ namespace BlackJack
             {
                 while (totaldealer < 17)
                 {
-                    DealerAddCard();
-                }
+                    DealerAddCard(DealerStartCardsList);
+                } 
             }
 
             EndCheck();
@@ -371,10 +396,10 @@ namespace BlackJack
                 //do nothing   
             }
             else
-            {
+            { 
                 while (totaldealer < 17)
-                {
-                    DealerAddCard();
+                { 
+                    DealerAddCard(DealerSplitCardsList);
                 }
             }
 
@@ -400,7 +425,7 @@ namespace BlackJack
         } 
           
         /// <summary>
-        /// Взять карту
+        /// Взять карту 
         /// </summary>
         /// <returns></returns>
         public void Hit(List<Card> CurrentCardList)
@@ -416,7 +441,7 @@ namespace BlackJack
                         CurrentCard.Number = 1; //присвоим значение 1  
                         totalplayer -= 10; 
                     }
-                }   
+                }    
             }  
              
         } 
