@@ -112,20 +112,23 @@ namespace BlackJack
 
         private void buttonStatistics_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-               "Побед дилера: " + Statistic.GetDealerWins().ToString() + "\n" +
-               "Побед игрока: " + Statistic.GetPlayerWins().ToString() + "\n" +
-               "Ничьих: " + Statistic.GetDraws().ToString() + "\n"+
-               "Нажмите Отмена, чтобы сбросить",
-               "Статистика",  
-               MessageBoxButtons.OKCancel); 
+            StatsForm s = new StatsForm();
+            s.Show();
 
-            if (result == DialogResult.Cancel) 
-            { 
-                Statistic.resetStat();
-                MessageBox.Show("Статистика сброшена!");
-            }
-                 
+            //DialogResult result = MessageBox.Show(
+            //   "Побед дилера: " + Statistic.GetDealerWins().ToString() + "\n" +
+            //   "Побед игрока: " + Statistic.GetPlayerWins().ToString() + "\n" +
+            //   "Ничьих: " + Statistic.GetDraws().ToString() + "\n" +
+            //   "Нажмите Отмена, чтобы сбросить",
+            //   "Статистика",
+            //   MessageBoxButtons.OKCancel);
+
+            //if (result == DialogResult.Cancel)
+            //{
+            //    Statistic.resetStat();
+            //    MessageBox.Show("Статистика сброшена!");
+            //}
+
         }  
     }       
 } 
