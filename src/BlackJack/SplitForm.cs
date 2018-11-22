@@ -49,7 +49,7 @@ namespace BlackJack
             HitButton1.Visible = true;
             StandButton1.Visible = true; 
 
-            if (game1.HasA()) //если в картах игрока имеется туз
+            if (game1.PlayerHasA()) //если в картах игрока имеется туз
             {
                 labelHasA1.Text = "A(1 или 11)"; //выводим соотв текст 
             }
@@ -63,7 +63,7 @@ namespace BlackJack
             // очищаем label с тузом  
             labelHasA.Text = ""; 
 
-            if (game1.HasA()) //если в картах игрока имеется туз
+            if (game1.PlayerHasA()) //если в картах игрока имеется туз
             {
                 labelHasA1.Text = "A(1 или 11)"; //выводим соотв текст 
             }
@@ -92,7 +92,7 @@ namespace BlackJack
                 HitButton1.Visible = false;
                 StandButton1.Visible = false;
 
-                if (game2.HasA()) //если в картах игрока имеется туз
+                if (game2.PlayerHasA()) //если в картах игрока имеется туз
                 {
                     labelHasA2.Text = "A(1 или 11)"; //выводим соотв текст 
                 } 
@@ -119,7 +119,7 @@ namespace BlackJack
             HitButton1.Visible = false; 
             StandButton1.Visible = false;
 
-            if (game2.HasA()) //если в картах игрока имеется туз
+            if (game2.PlayerHasA()) //если в картах игрока имеется туз
             {
                 labelHasA2.Text = "A(1 или 11)"; //выводим соотв текст 
             }
@@ -132,10 +132,10 @@ namespace BlackJack
         {
             game2.Hit(game2.PlayerCardsList_Split2);
 
-            // очищаем label с тузом  
+            // очищаем label с тузом   
             labelHasA.Text = "";
 
-            if (game2.HasA()) //если в картах игрока имеется туз
+            if (game2.PlayerHasA()) //если в картах игрока имеется туз
             {
                 labelHasA2.Text = "A(1 или 11)"; //выводим соотв текст 
             }
@@ -159,7 +159,7 @@ namespace BlackJack
                 game1.EndCheck();
                 info1.Text = game1.EndMessage(); 
 
-                buttonClose.Visible = true; 
+                buttonClose.Visible = true;  
             } 
 
             // записываем новую карту 
