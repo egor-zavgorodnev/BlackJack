@@ -39,9 +39,7 @@
             this.StandButton = new System.Windows.Forms.Button();
             this.info = new System.Windows.Forms.Label();
             this.newGame = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.textboxPlayerCards = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.D1 = new System.Windows.Forms.Label();
             this.invisLabel = new System.Windows.Forms.Label();
             this.labelHasA = new System.Windows.Forms.Label();
@@ -55,7 +53,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(151, 9);
+            this.label1.Location = new System.Drawing.Point(173, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 23);
             this.label1.TabIndex = 0;
@@ -67,7 +65,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(321, 106);
+            this.label2.Location = new System.Drawing.Point(298, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 23);
             this.label2.TabIndex = 1;
@@ -79,7 +77,7 @@
             this.dealerScore.BackColor = System.Drawing.Color.Transparent;
             this.dealerScore.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dealerScore.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dealerScore.Location = new System.Drawing.Point(375, 106);
+            this.dealerScore.Location = new System.Drawing.Point(352, 128);
             this.dealerScore.Name = "dealerScore";
             this.dealerScore.Size = new System.Drawing.Size(20, 23);
             this.dealerScore.TabIndex = 2;
@@ -91,7 +89,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(103, 235);
+            this.label4.Location = new System.Drawing.Point(173, 236);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 23);
             this.label4.TabIndex = 3;
@@ -103,7 +101,7 @@
             this.playerScore.BackColor = System.Drawing.Color.Transparent;
             this.playerScore.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.playerScore.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.playerScore.Location = new System.Drawing.Point(375, 268);
+            this.playerScore.Location = new System.Drawing.Point(349, 314);
             this.playerScore.Name = "playerScore";
             this.playerScore.Size = new System.Drawing.Size(20, 23);
             this.playerScore.TabIndex = 5;
@@ -115,7 +113,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(324, 268);
+            this.label6.Location = new System.Drawing.Point(298, 314);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 23);
             this.label6.TabIndex = 4;
@@ -126,7 +124,7 @@
             this.HitButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("HitButton.BackgroundImage")));
             this.HitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.HitButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.HitButton.Location = new System.Drawing.Point(240, 305);
+            this.HitButton.Location = new System.Drawing.Point(230, 350);
             this.HitButton.Name = "HitButton";
             this.HitButton.Size = new System.Drawing.Size(93, 40);
             this.HitButton.TabIndex = 6;
@@ -140,7 +138,7 @@
             this.StandButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("StandButton.BackgroundImage")));
             this.StandButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StandButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.StandButton.Location = new System.Drawing.Point(363, 305);
+            this.StandButton.Location = new System.Drawing.Point(353, 350);
             this.StandButton.Name = "StandButton";
             this.StandButton.Size = new System.Drawing.Size(91, 40);
             this.StandButton.TabIndex = 7;
@@ -155,11 +153,10 @@
             this.info.BackColor = System.Drawing.Color.Transparent;
             this.info.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.info.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.info.Location = new System.Drawing.Point(308, 129);
+            this.info.Location = new System.Drawing.Point(226, 165);
             this.info.Name = "info";
-            this.info.Size = new System.Drawing.Size(50, 23);
+            this.info.Size = new System.Drawing.Size(0, 23);
             this.info.TabIndex = 8;
-            this.info.Text = "Black";
             this.info.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // newGame
@@ -167,7 +164,7 @@
             this.newGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("newGame.BackgroundImage")));
             this.newGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.newGame.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.newGame.Location = new System.Drawing.Point(534, 9);
+            this.newGame.Location = new System.Drawing.Point(477, 12);
             this.newGame.Name = "newGame";
             this.newGame.Size = new System.Drawing.Size(170, 40);
             this.newGame.TabIndex = 12;
@@ -175,42 +172,18 @@
             this.newGame.UseVisualStyleBackColor = true;
             this.newGame.Click += new System.EventHandler(this.newGame_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(178, 209);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 23);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Ваши карты:";
-            // 
             // textboxPlayerCards
             // 
             this.textboxPlayerCards.AutoSize = true;
             this.textboxPlayerCards.BackColor = System.Drawing.Color.White;
             this.textboxPlayerCards.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textboxPlayerCards.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textboxPlayerCards.Location = new System.Drawing.Point(52, 323);
+            this.textboxPlayerCards.Location = new System.Drawing.Point(38, 322);
             this.textboxPlayerCards.Name = "textboxPlayerCards";
             this.textboxPlayerCards.Size = new System.Drawing.Size(20, 23);
             this.textboxPlayerCards.TabIndex = 21;
             this.textboxPlayerCards.Text = "0";
             this.textboxPlayerCards.Visible = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(52, 93);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 23);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "Карты:";
             // 
             // D1
             // 
@@ -231,11 +204,10 @@
             this.invisLabel.BackColor = System.Drawing.Color.Transparent;
             this.invisLabel.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.invisLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.invisLabel.Location = new System.Drawing.Point(359, 129);
+            this.invisLabel.Location = new System.Drawing.Point(380, 165);
             this.invisLabel.Name = "invisLabel";
-            this.invisLabel.Size = new System.Drawing.Size(47, 23);
+            this.invisLabel.Size = new System.Drawing.Size(0, 23);
             this.invisLabel.TabIndex = 24;
-            this.invisLabel.Text = "Jack";
             this.invisLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelHasA
@@ -244,7 +216,7 @@
             this.labelHasA.BackColor = System.Drawing.Color.Transparent;
             this.labelHasA.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelHasA.ForeColor = System.Drawing.Color.Navy;
-            this.labelHasA.Location = new System.Drawing.Point(376, 213);
+            this.labelHasA.Location = new System.Drawing.Point(174, 269);
             this.labelHasA.Name = "labelHasA";
             this.labelHasA.Size = new System.Drawing.Size(0, 18);
             this.labelHasA.TabIndex = 25;
@@ -268,7 +240,7 @@
             this.buttonStatistics.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonStatistics.BackgroundImage")));
             this.buttonStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonStatistics.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonStatistics.Location = new System.Drawing.Point(12, 9);
+            this.buttonStatistics.Location = new System.Drawing.Point(16, 12);
             this.buttonStatistics.Name = "buttonStatistics";
             this.buttonStatistics.Size = new System.Drawing.Size(98, 40);
             this.buttonStatistics.TabIndex = 27;
@@ -282,15 +254,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OrangeRed;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(710, 355);
+            this.ClientSize = new System.Drawing.Size(659, 402);
             this.Controls.Add(this.buttonStatistics);
             this.Controls.Add(this.buttonSplit);
             this.Controls.Add(this.labelHasA);
             this.Controls.Add(this.invisLabel);
             this.Controls.Add(this.D1);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.textboxPlayerCards);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.newGame);
             this.Controls.Add(this.info);
             this.Controls.Add(this.StandButton);
@@ -303,6 +273,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Maroon;
             this.Name = "BlackJack";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BlackJack";
             this.Load += new System.EventHandler(this.BlackJack_Load);
@@ -321,9 +292,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label info;
         private System.Windows.Forms.Button newGame;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label textboxPlayerCards;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label D1;
         private System.Windows.Forms.Label invisLabel;
         private System.Windows.Forms.Label labelHasA;

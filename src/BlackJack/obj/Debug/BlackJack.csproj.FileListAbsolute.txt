@@ -28,3 +28,18 @@ C:\GitHub\BlackJack\src\BlackJack\obj\Debug\BlackJack.csproj.CoreCompileInputs.c
 C:\GitHub\BlackJack\src\BlackJack\obj\Debug\BlackJack.csproj.CopyComplete
 C:\GitHub\BlackJack\src\BlackJack\obj\Debug\BlackJack.exe
 C:\GitHub\BlackJack\src\BlackJack\obj\Debug\BlackJack.pdb
+H:\2 курс\Новиков\BlackJack\src\BlackJack\bin\Debug\BlackJack.exe.config
+H:\2 курс\Новиков\BlackJack\src\BlackJack\bin\Debug\BlackJack.exe
+H:\2 курс\Новиков\BlackJack\src\BlackJack\bin\Debug\BlackJack.pdb
+H:\2 курс\Новиков\BlackJack\src\BlackJack\bin\Debug\BlackJack.Game.dll
+H:\2 курс\Новиков\BlackJack\src\BlackJack\bin\Debug\BlackJack.Game.pdb
+H:\2 курс\Новиков\BlackJack\src\BlackJack\obj\Debug\BlackJack.csprojAssemblyReference.cache
+H:\2 курс\Новиков\BlackJack\src\BlackJack\obj\Debug\BlackJack.BlackJack.resources
+H:\2 курс\Новиков\BlackJack\src\BlackJack\obj\Debug\BlackJack.Properties.Resources.resources
+H:\2 курс\Новиков\BlackJack\src\BlackJack\obj\Debug\BlackJack.Split.resources
+H:\2 курс\Новиков\BlackJack\src\BlackJack\obj\Debug\BlackJack.StatsForm.resources
+H:\2 курс\Новиков\BlackJack\src\BlackJack\obj\Debug\BlackJack.csproj.GenerateResource.cache
+H:\2 курс\Новиков\BlackJack\src\BlackJack\obj\Debug\BlackJack.csproj.CoreCompileInputs.cache
+H:\2 курс\Новиков\BlackJack\src\BlackJack\obj\Debug\BlackJack.csproj.CopyComplete
+H:\2 курс\Новиков\BlackJack\src\BlackJack\obj\Debug\BlackJack.exe
+H:\2 курс\Новиков\BlackJack\src\BlackJack\obj\Debug\BlackJack.pdb

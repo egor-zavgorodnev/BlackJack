@@ -11,13 +11,15 @@ using System.Windows.Forms;
 namespace BlackJack
 {
     public partial class BlackJack : Form 
-    {
-        
-        
+    {  
+         
+         
         private static int startXPos = 259; //Стартовая позиция карт игрока (можно(нужно) менять)
+        private static int playerCardYPos = 200; // y-координата карт игрока 
         private int playerCardXPos = startXPos;// Позиция карт игрока, в который будт отрисоваться каты (Егор не трогай!)
 
         private static int dealerStartXPos = 400;//Стартовая позиция карт дилера (можно(нужно) менять)
+        private static int dealerCardYPos = 18; // y-координата карт дилера 
         private int dealerCardXPos = dealerStartXPos;// Позиция карт дилера, в который будт отрисоваться каты (Егор не трогай!)
 
         private string[] PlayerCardUpdate { get { string[] param = textboxPlayerCards.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);return param; } }//Заносим в массив все карты игрока
@@ -62,8 +64,7 @@ namespace BlackJack
             playerScore.Text = blackjack.GetTotalPlayer().ToString();
             dealerScore.Text = blackjack.GetTotalDealer().ToString();
            
-            //скрываем label с текстом Jack и выводим кнопки hit и stand 
-            invisLabel.Visible = false;
+
             HitButton.Visible = true;  
             StandButton.Visible = true;
 
@@ -156,20 +157,20 @@ namespace BlackJack
         /// <summary>
         /// Функция для отрисовки карт
         /// </summary>
-        /// <param name="card">пердаем карту, которую хотим отрисовать</param>
-        private void DrawPlayer(String card)//
-        {
+        /// <param name="card">передаем карту, которую хотим отрисовать</param>
+        private void DrawPlayer(String card)// 
+        { 
             playerCardXPos += 35;//Расстояние между картами 
             PictureBox newCard = new PictureBox();//Создаем объект класса PictureBox
             Image img = Image.FromFile("../../CardsSprites/" + card + ".png"); //берем саму картинку из папки проекта , пердворительно узнав ее названия
             newCard.Image = img;//присваиваем картинку
-            newCard.Location = new System.Drawing.Point(playerCardXPos, 171);//Расположение  картинки  менять по можно по Игрик координат
+            newCard.Location = new System.Drawing.Point(playerCardXPos, playerCardYPos);//Расположение  картинки  менять по можно по Игрик координат
             newCard.Name = "newCard";//хз
             newCard.Size = new System.Drawing.Size(72, 99);// Размер картинки
             this.Controls.Add(newCard);//хз
             newCard.BringToFront();// на верх всего
             playerCardsToDisplay.Add(newCard);//добавляем в лист
-        }
+        } 
       
 
         /// <summary>
@@ -190,8 +191,8 @@ namespace BlackJack
         private void PlayerCardDraw()
         {
             string[] cardUpdate = PlayerCardUpdate;// заносим в данные в массив
-            for (int i = 0; i < cardUpdate.Length; i = i + 2)// цыклом берм из массива имена нужных карт и рисуем их
-            {
+            for (int i = 0; i < cardUpdate.Length; i = i + 2)// циклом берм из массива имена нужных карт и рисуем их
+            { 
                 string card;
                 card = cardUpdate[i] + cardUpdate[i + 1];
                 DrawPlayer(card);
@@ -208,7 +209,7 @@ namespace BlackJack
             PictureBox newCard = new PictureBox();//Создаем объект класса PictureBox
             Image img = Image.FromFile("../../CardsSprites/" + card + ".png");//берем саму картинку из папки проекта , пердворительно узнав ее названия
             newCard.Image = img;//присваиваем картинку
-            newCard.Location = new System.Drawing.Point(dealerCardXPos, 8);
+            newCard.Location = new System.Drawing.Point(dealerCardXPos, dealerCardYPos);
             newCard.Name = "newCard";
             newCard.Size = new System.Drawing.Size(72, 99);// Размер картинки
             this.Controls.Add(newCard);
@@ -222,7 +223,7 @@ namespace BlackJack
         private void DealerCardDraw()
         {
             string[] cardUpdate = DealerCardUpdate;// заносим в данные в массив
-            for (int i = 0; i < cardUpdate.Length; i = i + 2)// цыклом берм из массива имена нужных карт и рисуем их
+            for (int i = 0; i < cardUpdate.Length; i = i + 2)// циклом берем из массива имена нужных карт и рисуем их
             {
                 string card;
                 card = cardUpdate[i] + cardUpdate[i + 1];
@@ -230,5 +231,5 @@ namespace BlackJack
             }
         }
     }       
-} 
+}  
    
