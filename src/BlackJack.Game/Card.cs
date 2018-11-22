@@ -82,7 +82,7 @@ namespace BlackJack
 
     public class Game
     { 
-
+         
         public int totaldealer = 0; //сумма очков дилера
         private int totalplayer = 0; //сумма очков игрока  
 
@@ -90,7 +90,7 @@ namespace BlackJack
   
         public static List<Card> PlayerCardsList = new List<Card>(); //список карт игрока , статический список для главной игры
 
-        public static List<Card> DealerStartCardsList = new List<Card>(); //список карт дилера , статический список для главной игры
+        public static List<Card> DealerCardsList = new List<Card>(); //список карт дилера , статический список для главной игры
         public List<Card> DealerSplitCardsList = new List<Card>(); //список карт дилера в сплите
             
         public List<Card> PlayerCardsList_Split1 = new List<Card>(); //список карт игрока для сплита1 
@@ -104,8 +104,8 @@ namespace BlackJack
         public Card PlayerSecondCard { get { return PlayerCardsList[1]; } }
 
         //первая и вторая ката дилера (для сплита)  
-        public Card DealerFirstCard { get { return DealerStartCardsList[0]; } }
-        public Card DealerSecondCard { get { return DealerStartCardsList[1]; } }
+        public Card DealerFirstCard { get { return DealerCardsList[0]; } }
+        public Card DealerSecondCard { get { return DealerCardsList[1]; } }
 
           
         public int CardCount { get; set; } 
@@ -143,7 +143,19 @@ namespace BlackJack
 
             CurrentCardsList.Add(newcard); 
 
-            DealerCards += newcard.GetCaption() + " "; 
+            DealerCards += newcard.GetCaption() + " ";
+
+            if (totaldealer > 21 & DealerHasA()) //если сумма очков больше 21 и в колоде игрока имеется туз
+            {
+                foreach (var CurrentCard in DealerCardsList) //проходим по картам чтобы найти туз
+                {
+                    if (CurrentCard.Number == 11) //если туз
+                    {
+                        CurrentCard.Number = 1; //присвоим значение 1  
+                        totaldealer -= 10;
+                    }
+                }
+            }  
         }
           
         /// <summary> 
@@ -164,7 +176,7 @@ namespace BlackJack
         /// Есть ли туз среди карт игрока  
         /// </summary>
         /// <returns></returns> 
-        public bool HasA() 
+        public bool PlayerHasA()  
         {
             foreach (var CurrentCard in PlayerCardsList)
             {
@@ -174,6 +186,22 @@ namespace BlackJack
                 }
             }
             return false; 
+        }
+
+        /// <summary>
+        /// Есть ли туз среди карт игрока  
+        /// </summary>  
+        /// <returns></returns> 
+        public bool DealerHasA()
+        {
+            foreach (var CurrentCard in DealerCardsList)
+            {
+                if (CurrentCard.Number == 11)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         /// <summary>
         /// Конец игры: определение победителя
@@ -258,7 +286,7 @@ namespace BlackJack
             PlayerCardsList_Split2.Clear();
 
             DealerSplitCardsList.Clear();
-            DealerStartCardsList.Clear();
+            DealerCardsList.Clear();
 
             PlayerCards = ""; 
             DealerCards = ""; 
@@ -287,8 +315,8 @@ namespace BlackJack
             PlayerAddCard(PlayerCardsList);
             PlayerAddCard(PlayerCardsList);   
                
-            DealerAddCard(DealerStartCardsList);  
-            DealerAddCard(DealerStartCardsList); //игроку и дилеру дается по одной карте   
+            DealerAddCard(DealerCardsList);  
+            DealerAddCard(DealerCardsList); //игроку и дилеру дается по одной карте   
 
             if (GetTotalDealer() == 22)
                 totaldealer = 2;
@@ -377,7 +405,7 @@ namespace BlackJack
             {
                 while (totaldealer < 17)
                 {
-                    DealerAddCard(DealerStartCardsList);
+                    DealerAddCard(DealerCardsList);
                 } 
             }
 
@@ -390,16 +418,17 @@ namespace BlackJack
         /// <returns></returns>
         public void SplitDealerMove() 
         {
-
+   
             if (totaldealer == 16)
             {
                 //do nothing   
             }
             else
-            { 
+            {
+
                 while (totaldealer < 17)
-                { 
-                    DealerAddCard(DealerSplitCardsList);
+                {
+                    DealerAddCard(DealerSplitCardsList); 
                 }
             }
 
@@ -414,7 +443,7 @@ namespace BlackJack
         /// <returns></returns>
         public bool IsOverflow() 
         {
-            if (totalplayer > 21 & !HasA()) 
+            if (totalplayer > 21 & !PlayerHasA()) 
             {
                 Statistic.AddDealerWin(); 
                 return true;
@@ -432,7 +461,7 @@ namespace BlackJack
         {
             PlayerAddCard(CurrentCardList);
  
-            if (totalplayer > 21 & HasA()) //если сумма очков больше 21 и в колоде игрока имеется туз
+            if (totalplayer > 21 & PlayerHasA()) //если сумма очков больше 21 и в колоде игрока имеется туз
             {
                 foreach (var CurrentCard in CurrentCardList) //проходим по картам чтобы найти туз
                 {
