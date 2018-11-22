@@ -1,0 +1,12 @@
+C:\Users\Светлана\Documents\GitHub\BlackJack\src\BlackJack.Game\bin\Debug\BlackJack.Game.dll
+C:\Users\Светлана\Documents\GitHub\BlackJack\src\BlackJack.Game\bin\Debug\BlackJack.Game.pdb
+C:\Users\Светлана\Documents\GitHub\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.csprojResolveAssemblyReference.cache
+C:\Users\Светлана\Documents\GitHub\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.csproj.CoreCompileInputs.cache
+C:\Users\Светлана\Documents\GitHub\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.dll
+C:\Users\Светлана\Documents\GitHub\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.pdb
+C:\GitHub\BlackJack\src\BlackJack.Game\bin\Debug\BlackJack.Game.dll
+C:\GitHub\BlackJack\src\BlackJack.Game\bin\Debug\BlackJack.Game.pdb
+C:\GitHub\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.csprojResolveAssemblyReference.cache
+C:\GitHub\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.csproj.CoreCompileInputs.cache
+C:\GitHub\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.dll
+C:\GitHub\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.pdb
