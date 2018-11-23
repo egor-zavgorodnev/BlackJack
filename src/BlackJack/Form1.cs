@@ -68,7 +68,7 @@ namespace BlackJack
             HitButton.Visible = true;  
             StandButton.Visible = true;
 
-            if (blackjack.HasA()) //если в картах игрока имеется туз
+            if (blackjack.PlayerHasA()) //если в картах игрока имеется туз
             {
                 labelHasA.Text = "A(1 или 11)"; //выводим соотв текст 
             }
@@ -90,7 +90,7 @@ namespace BlackJack
 
              blackjack.Hit(Game.PlayerCardsList); 
              
-            if (blackjack.HasA()) //если в картах игрока имеется туз
+            if (blackjack.PlayerHasA()) //если в картах игрока имеется туз
             {
                 labelHasA.Text = "A(1 или 11)"; //выводим соотв текст 
             }
@@ -143,7 +143,7 @@ namespace BlackJack
             Split f = new Split();
             f.Owner = this; 
             f.ShowDialog();
-
+            buttonSplit.Visible = false;
         }
 
         private void buttonStatistics_Click(object sender, EventArgs e)
