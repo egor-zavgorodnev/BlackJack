@@ -36,7 +36,7 @@ namespace BlackJack
         public List<PictureBox> Game2playerCardsToDisplay; // Объявляем лист  карт для Game2 игрока
 
         public List<PictureBox> dealerCardsToDisplay; // Объявляем лист  карт для дилера
-
+         
 
         public Split()
         {

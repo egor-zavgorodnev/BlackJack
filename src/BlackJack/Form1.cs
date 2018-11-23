@@ -46,12 +46,30 @@ namespace BlackJack
             RemoveCards(playerCardsToDisplay); RemoveCards(dealerCardsToDisplay); //Очишаем лист с картами игрка  и дилера
             playerCardXPos = startXPos; dealerCardXPos = dealerStartXPos;//!!Востанавливаем позицию появления карт игрока и дилера
 
+            // Показать все элементы после старта игры
+            buttonStatistics.Visible = true;
+            label1.Visible = true;
+            buttonStatistics.Visible = true;
+            label2.Visible = true;
+            dealerScore.Visible = true;
+            label4.Visible = true;
+            dealerScore.Visible = true; 
+            label6.Visible = true;
+            info.Visible = true; 
+            playerScore.Visible = true;
+            labelTitle.Visible = false;
+            labelSubtitle.Visible = false; 
+
+             
             // очищаем label с тузом  
             labelHasA.Text = ""; 
             blackjack.EndGame();   
             blackjack.GameStart(); 
 
+
+
             buttonSplit.Visible = false;
+
             if (blackjack.SplitCheck())
             {
                 buttonSplit.Visible = true;

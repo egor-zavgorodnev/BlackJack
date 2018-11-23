@@ -310,6 +310,8 @@ namespace BlackJack
         public void GameStart()   
         { 
 
+
+
             _deck.Shuffle(CardCount); //перемешиваем колоду и берем из нее 11 карт
 
             PlayerAddCard(PlayerCardsList);
@@ -318,7 +320,7 @@ namespace BlackJack
             DealerAddCard(DealerCardsList);  
             DealerAddCard(DealerCardsList); //игроку и дилеру дается по одной карте   
 
-            if (GetTotalDealer() == 22)
+            if (GetTotalDealer() == 22) 
                 totaldealer = 2;
         }
          
