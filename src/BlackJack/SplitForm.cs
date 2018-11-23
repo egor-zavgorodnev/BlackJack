@@ -47,11 +47,11 @@ namespace BlackJack
 
         }
 
-        Game game1 = new Game();
-        Game game2 = new Game();
+        SplitGame game1 = new SplitGame();
+        SplitGame game2 = new SplitGame();
 
         /// <summary>
-        /// Инициализация при загрузке формы 
+        /// Инициализация при загрузке формы  
         /// </summary>  
         /// <param name="sender"></param>
         /// <param name="e"></param> 
@@ -159,7 +159,7 @@ namespace BlackJack
 
             // очищаем label с тузом  
             labelHasA1.Text = "";
-
+             
             //скрываем hit1 и stand1
             HitButton1.Visible = false;
             StandButton1.Visible = false;
@@ -176,7 +176,7 @@ namespace BlackJack
         private void HitButton2_Click_1(object sender, EventArgs e)
         {
             game2.Hit(game2.PlayerCardsList_Split2);
-
+             
             // очищаем label с тузом  
             labelHasA.Text = "";
 

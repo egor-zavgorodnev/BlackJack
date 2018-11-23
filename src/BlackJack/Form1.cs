@@ -103,7 +103,7 @@ namespace BlackJack
 
         private void HitButton_Click(object sender, EventArgs e)
         {
-            // очищаем label с тузом  
+            // очищаем label с тузом   
             labelHasA.Text = "";
 
              blackjack.Hit(Game.PlayerCardsList); 
