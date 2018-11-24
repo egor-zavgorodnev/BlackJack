@@ -3,46 +3,34 @@
     public class Statistic
     { 
         //Статистика  
-        private static int dealerWins = 0;
-        private static int playerWins = 0;
-        private static int draws = 0;
 
-        /// <summary> 
-        /// Сброс статистики 
-        /// </summary>
-        public static void resetStat() 
-        {
-            dealerWins = 0;
-            playerWins = 0; 
-            draws = 0;
-        }
-         
-        public static int GetDealerWins()
-        {
-            return dealerWins;
-        }  
+        public static int DealerWins { get; private set; } = 0;
+        public static int PlayerWins { get; private set; } = 0;
+        public static int Draws { get; private set; } = 0;
 
-        public static int GetPlayerWins()
-        {
-            return playerWins; 
-        }
-        public static int GetDraws()
-        {
-            return draws; 
-        }
 
+        /// <summary>         
+        /// Сброс статистики     
+        /// </summary>  
+        public static void resetStat()   
+        {
+            DealerWins = 0;
+            PlayerWins = 0; 
+            Draws = 0;
+        }
+          
         public static void AddPlayerWin()
         {
-            playerWins++;
+            PlayerWins++;
         } 
-        public static void AddDealerWin()
+        public static void AddDealerWin() 
         { 
-            dealerWins++; 
+            DealerWins++;  
         }
         public static void AddDraw()
         {
-            draws++;
+            Draws++;
         }
   
     }
-}
+} 

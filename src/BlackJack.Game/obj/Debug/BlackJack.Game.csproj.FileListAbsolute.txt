@@ -16,3 +16,14 @@ C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack.Game\obj\Debug\
 C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack.Game\obj\Debug\BlackJack.Game.csproj.CoreCompileInputs.cache
 C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack.Game\obj\Debug\BlackJack.Game.dll
 C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack.Game\obj\Debug\BlackJack.Game.pdb
+H:\2 курс\Новиков\BlackJack\src\BlackJack.Game\bin\Debug\BlackJack.Game.dll
+H:\2 курс\Новиков\BlackJack\src\BlackJack.Game\bin\Debug\BlackJack.Game.pdb
+H:\2 курс\Новиков\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.csprojAssemblyReference.cache
+H:\2 курс\Новиков\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.csproj.CoreCompileInputs.cache
+H:\2 курс\Новиков\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.dll
+H:\2 курс\Новиков\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.pdb
+C:\Users\Рома\Desktop\BlackJack-master\src\BlackJack.Game\bin\Debug\BlackJack.Game.dll
+C:\Users\Рома\Desktop\BlackJack-master\src\BlackJack.Game\bin\Debug\BlackJack.Game.pdb
+C:\Users\Рома\Desktop\BlackJack-master\src\BlackJack.Game\obj\Debug\BlackJack.Game.csprojResolveAssemblyReference.cache
+C:\Users\Рома\Desktop\BlackJack-master\src\BlackJack.Game\obj\Debug\BlackJack.Game.dll
+C:\Users\Рома\Desktop\BlackJack-master\src\BlackJack.Game\obj\Debug\BlackJack.Game.pdb

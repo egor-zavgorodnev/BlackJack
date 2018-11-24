@@ -36,7 +36,7 @@ namespace BlackJack
         public List<PictureBox> Game2playerCardsToDisplay; // Объявляем лист  карт для Game2 игрока
 
         public List<PictureBox> dealerCardsToDisplay; // Объявляем лист  карт для дилера
-
+         
 
         public Split()
         {
@@ -47,19 +47,26 @@ namespace BlackJack
 
         }
 
-        Game game1 = new Game();
-        Game game2 = new Game();
+        SplitGame game1 = new SplitGame();
+        SplitGame game2 = new SplitGame();
 
         /// <summary>
-        /// Инициализация при загрузке формы 
+        /// Костыль что бы получить очки только первой карты дилера 
+        /// </summary>
+        /// <returns></returns>
+        public int gettotaldealerwithbolckcard()
+        {
+            return game2.GetTotalDealer() - Game.DealerSecondCard.GetValue(); ;
+        }
+
+        /// <summary>
+        /// Инициализация при загрузке формы  
         /// </summary>  
         /// <param name="sender"></param>
         /// <param name="e"></param> 
         private void Split_Load(object sender, EventArgs e)
         {
 
-            RemoveCards(Game1playerCardsToDisplay); RemoveCards(Game2playerCardsToDisplay); RemoveCards(dealerCardsToDisplay); //Очишаем лист с картами игрка  и дилера
-            Game1playerCardXPos = Game1startXPos; Game2playerCardXPos = Game2startXPos; dealerCardXPos = dealerStartXPos;//!!Востанавливаем позицию появления карт игрока и дилера
 
             // Начало 1 и второй игры 
             game1.SplitGame1Start();
@@ -75,7 +82,7 @@ namespace BlackJack
             textboxPlayerCards2.Text = game2.PlayerCards;
 
             // выводим очки дилера 
-            dealerScore.Text = game2.GetTotalDealer().ToString();
+            dealerScore.Text = gettotaldealerwithbolckcard().ToString();
             D1.Text = game2.DealerCards;
 
 
@@ -92,7 +99,7 @@ namespace BlackJack
             Game1PlayerCardDraw();
             Game2PlayerCardDraw();
             DealerCardDraw();
-
+            DrawBlockedDealer();
 
         }
 
@@ -114,12 +121,12 @@ namespace BlackJack
                 //dealersWinsText.Text = Statistic.GetDealerWins().ToString(); 
                 info1.Text = "Победа дилера! Перебор у игрока";
 
-                //выводим на форму первые 2 карты игрока и дилера 
+                //выводим на форму карты игрока 
                 textboxPlayerCards2.Text = game2.PlayerCards;
-                D1.Text = game2.DealerCards;
-                // их очки  
+                
+                // и очки  
                 playerScore2.Text = game2.GetTotalPlayer().ToString();
-                dealerScore.Text = game2.GetTotalDealer().ToString();
+                
 
                 //выводим кнопки hit2 и stand2    
                 HitButton2.Visible = true;
@@ -145,8 +152,7 @@ namespace BlackJack
             if (game1.GetTotalPlayer() == 21) HitButton1.Visible = false;
 
             //Комент
-            RemoveCards(Game1playerCardsToDisplay);
-            Game1playerCardXPos = Game1startXPos;
+            Game1PlayerCardsRemoveAndBackToStartPosition();
             Game1PlayerCardDraw();
         }
 
@@ -159,7 +165,7 @@ namespace BlackJack
 
             // очищаем label с тузом  
             labelHasA1.Text = "";
-
+             
             //скрываем hit1 и stand1
             HitButton1.Visible = false;
             StandButton1.Visible = false;
@@ -176,7 +182,7 @@ namespace BlackJack
         private void HitButton2_Click_1(object sender, EventArgs e)
         {
             game2.Hit(game2.PlayerCardsList_Split2);
-
+             
             // очищаем label с тузом  
             labelHasA.Text = "";
 
@@ -207,8 +213,7 @@ namespace BlackJack
                 buttonClose.Visible = true;
 
                 // При стенде отрисововаем карты
-                RemoveCards(dealerCardsToDisplay);//Очишаем лист с картами дилера
-                dealerCardXPos = dealerStartXPos;//!!Востанавливаем позицию появления карт дилера
+                DealerCardsRemoveAndBackToStartPosition();//Очишаем лист с картами дилера//!!Востанавливаем позицию появления карт дилера
                 DealerCardDraw(); // Рисуем
 
             }
@@ -218,9 +223,9 @@ namespace BlackJack
             textboxPlayerCards2.Text = game2.PlayerCards;
             // скрываем кнопку hit при 21 
             if (game2.GetTotalPlayer() == 21) HitButton2.Visible = false;
+
             //Комент
-            RemoveCards(Game2playerCardsToDisplay);
-            Game2playerCardXPos = Game2startXPos;
+            Game2PlayerCardsRemoveAndBackToStartPosition();
             Game2PlayerCardDraw();
         }
 
@@ -245,8 +250,7 @@ namespace BlackJack
 
             buttonClose.Visible = true;
             // При стенде отрисововаем карты
-            RemoveCards(dealerCardsToDisplay);//Очишаем лист с картами дилера
-            dealerCardXPos = dealerStartXPos;//!!Востанавливаем позицию появления карт дилера
+            DealerCardsRemoveAndBackToStartPosition();//Очишаем лист с картами дилера//!!Востанавливаем позицию появления карт дилера
             DealerCardDraw(); // Рисуем
 
         }
@@ -259,7 +263,7 @@ namespace BlackJack
                 main.HitButton.Visible = false;
                 main.StandButton.Visible = false;
                 main.buttonSplit.Visible = false;
-
+                
             }
 
 
@@ -375,7 +379,50 @@ namespace BlackJack
             }
         }
 
-      
+
+        /// <summary>
+        /// Рисуем Закрытую карту 
+        /// </summary>
+        private void DrawBlockedDealer()
+        {
+            dealerCardXPos -= 35;//Расстояние между картами 
+            PictureBox newCard = new PictureBox();//Создаем объект класса PictureBox
+            Image img = Image.FromFile("../../CardsSprites/b2fv.png");//берем саму картинку из папки проекта , пердворительно узнав ее названия
+            newCard.Image = img;//присваиваем картинку
+            newCard.Location = new System.Drawing.Point(329, 18);
+            newCard.Name = "newCard";
+            newCard.Size = new System.Drawing.Size(72, 99);// Размер картинки
+            this.Controls.Add(newCard);
+            newCard.BringToFront();// на верх всего   
+        }
+
+        /// <summary>
+        /// Ну ты понял ;-) чтою вместо двух строк кода, одну писать оптимизация
+        /// </summary>
+        private void Game1PlayerCardsRemoveAndBackToStartPosition()
+        {
+            RemoveCards(Game1playerCardsToDisplay);//Очишаем лист с картами игрка 
+            Game1playerCardXPos = Game1startXPos;//!!Востанавливаем позицию появления карт игрока
+        }
+
+        /// <summary>
+        /// Ну ты понял ;-) чтою вместо двух строк кода, одну писать оптимизация
+        /// </summary>
+        private void Game2PlayerCardsRemoveAndBackToStartPosition()
+        {
+            RemoveCards(Game2playerCardsToDisplay);//Очишаем лист с картами игрка 
+            Game2playerCardXPos = Game2startXPos;//!!Востанавливаем позицию появления карт игрока
+        }
+
+        /// <summary>
+        /// Ну ты понял ;-) чтою вместо двух строк кода, одну писать оптимизация
+        /// </summary>
+        private void DealerCardsRemoveAndBackToStartPosition()
+        {
+            RemoveCards(dealerCardsToDisplay);
+            dealerCardXPos = dealerStartXPos;
+        }
+
     }
 }
 

@@ -21,11 +21,11 @@ namespace BlackJack
 
         private void StatsForm_Load(object sender, EventArgs e)
         {
-            labelDW.Text = Statistic.GetDealerWins().ToString(); //Побед дилера
-            labelPW.Text = Statistic.GetPlayerWins().ToString(); //Побед игрока
-            labelDraws.Text = Statistic.GetDraws().ToString(); //Ничьих
+            labelDW.Text = Statistic.DealerWins.ToString(); //Побед дилера
+            labelPW.Text = Statistic.PlayerWins.ToString(); //Побед игрока
+            labelDraws.Text = Statistic.Draws.ToString(); //Ничьих
         } 
-          
+            
          
           
         private void buttonOK_Click(object sender, EventArgs e)
