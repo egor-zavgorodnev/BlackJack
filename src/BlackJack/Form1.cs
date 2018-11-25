@@ -184,7 +184,7 @@ namespace BlackJack
             HitButton.Visible = false; 
             StandButton.Visible = false;   
             //DealerCardsRemoveAndBackToStartPosition(); // Егор если сделашь, чтоб при сплите закрывалась основная форма , то убери коменты   ♥#VS Chat 20!8♥
-            //DealerCardDraw(); // 
+            //DealerCardDraw();
              
         }
 
@@ -193,8 +193,8 @@ namespace BlackJack
             StatsForm f = new StatsForm();
             f.Owner = this;
             f.ShowDialog();             
-        } 
-        
+        }  
+         
         /// <summary>
         /// Функция для отрисовки карт
         /// </summary>
@@ -238,7 +238,7 @@ namespace BlackJack
                 card = cardUpdate[i] + cardUpdate[i + 1];
                 DrawPlayer(card);
             }
-        }
+        }  
 
         /// <summary>
         /// Функция для отрисовки карт
