@@ -8,10 +8,10 @@
         public static int PlayerWins { get; private set; } = 0;
         public static int Draws { get; private set; } = 0;
 
-
+          
         /// <summary>         
         /// Сброс статистики     
-        /// </summary>  
+        /// </summary>   
         public static void resetStat()   
         {
             DealerWins = 0;
@@ -30,7 +30,7 @@
         public static void AddDraw()
         {
             Draws++;
-        }
+        } 
   
     }
-} 
+}  

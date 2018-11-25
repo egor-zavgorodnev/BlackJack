@@ -264,7 +264,7 @@
             this.labelTitle.BackColor = System.Drawing.Color.Transparent;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.Black;
-            this.labelTitle.Location = new System.Drawing.Point(138, 125);
+            this.labelTitle.Location = new System.Drawing.Point(85, 128);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(485, 108);
             this.labelTitle.TabIndex = 28;
@@ -316,14 +316,14 @@
         public System.Windows.Forms.Button HitButton;
         public System.Windows.Forms.Button StandButton;
         private System.Windows.Forms.Label labelSubtitle;
-        private System.Windows.Forms.Button newGame;
         private System.Windows.Forms.Label textboxPlayerCards;
         private System.Windows.Forms.Label D1;
         private System.Windows.Forms.Label labelHasA;
         public System.Windows.Forms.Button buttonSplit;
-        private System.Windows.Forms.Button buttonStatistics;
         private System.Windows.Forms.Label info;
         private System.Windows.Forms.Label labelTitle;
+        public System.Windows.Forms.Button newGame;
+        public System.Windows.Forms.Button buttonStatistics;
     }
 }
 

@@ -25,13 +25,13 @@ namespace BlackJack
 
         //первая и вторая ката дилера (для сплита)  
         protected Card DealerFirstCard { get { return DealerCardsList[0]; } } 
-        protected Card DealerSecondCard { get { return DealerCardsList[1]; } }
-
+        public static Card DealerSecondCard { get { return DealerCardsList[1]; } }
+          
 
         protected int CardCount { get; set; }
 
         public Game(int cardCount = 11)
-        {
+        { 
             CardCount = cardCount;
         }
 

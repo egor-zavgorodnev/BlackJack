@@ -262,9 +262,12 @@ namespace BlackJack
             {
                 main.HitButton.Visible = false;
                 main.StandButton.Visible = false;
-                main.buttonSplit.Visible = false;
-                
-            }
+                main.buttonSplit.Visible = false; 
+
+                main.buttonStatistics.Visible = true;
+                main.newGame.Visible = true;
+
+            } 
 
 
 
