@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace BlackJack
 {
     public partial class BlackJack : Form
-    {
+    { 
 
 
         private static int startXPos = 259; //Стартовая позиция карт игрока (можно(нужно) менять)

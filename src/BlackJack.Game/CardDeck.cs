@@ -46,10 +46,10 @@ namespace BlackJack
         {
             return cards.Count;
         } 
-          
+           
         public void Shuffle(int cardCount)
         {
-            initialDeck = Create_52_deck(); 
+            //initialDeck = Create_52_deck(); 
             cards = new List<Card>();
              
             for (int i = 0; i < cardCount; i++) 
@@ -69,6 +69,15 @@ namespace BlackJack
             cards.RemoveAt(0);
             return card;
         }
+         
+        public Card PickCard(int i)
+        {
+            CheckNotEmpty();
+              
+            var card = cards[i]; 
+            cards.RemoveAt(i);
+            return card;
+        }  
 
         private void CheckNotEmpty() 
         {
@@ -85,6 +94,8 @@ namespace BlackJack
             {2,3,4,5,6,7,8,9,10,11};
 
         static Random rnd = new Random();
+
+
 
 
         public int value = cards[rnd.Next(0, cards.Count - 1)]; //"вытаскиваем" случайную карту 

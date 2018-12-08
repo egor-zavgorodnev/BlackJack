@@ -139,7 +139,7 @@ namespace BlackJack
                 Statistic.AddPlayerWin();
                 return 1; //победа игрока 
             }
-            else
+            else 
             {
                 Statistic.AddDraw();
             }
