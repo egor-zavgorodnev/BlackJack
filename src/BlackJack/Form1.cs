@@ -56,7 +56,7 @@ namespace BlackJack
 
         private void newGame_Click(object sender, EventArgs e)
         {
-            PlayerCardsRemoveAndBackToStartPosition(); DealerCardsRemoveAndBackToStartPosition(); //Очишаем лист с картами игрка  и дилера !!Востанавливаем позицию появления карт игрока и дилера
+           
    
             // Показать все элементы после старта игры
             buttonStatistics.Visible = true;
@@ -71,47 +71,92 @@ namespace BlackJack
             playerScore.Visible = true;
             labelTitle.Visible = false;
             labelSubtitle.Visible = false;
-
-
-            // очищаем label с тузом  
-            labelHasA.Text = "";
-            blackjack.EndGame();
-            blackjack.GameStart();
-
-
-
-            buttonSplit.Visible = false;
-
-            if (blackjack.SplitCheck())
+            label_Cards_left.Visible = true;
+            Cards_left.Visible = true;
+            if (CardLeftCheck())
             {
-                buttonSplit.Visible = true;
+                PlayerCardsRemoveAndBackToStartPosition(); DealerCardsRemoveAndBackToStartPosition(); //Очишаем лист с картами игрка  и дилера !!Востанавливаем позицию появления карт игрока и дилера
+                // очищаем label с тузом  
+                labelHasA.Text = "";
+                blackjack.EndGame();
+                blackjack.GameStart();
+
+                Cards_left.Text = CardDeck.GetCardCount.ToString();
+
+                buttonSplit.Visible = false;
+
+                if (blackjack.SplitCheck())
+                {
+                    buttonSplit.Visible = true;
+                }
+
+                //выводим на форму первые 2 карты дилера и игрока 
+                D1.Text = blackjack.DealerCards;
+                textboxPlayerCards.Text = blackjack.PlayerCards;
+                // их очки
+                playerScore.Text = blackjack.GetTotalPlayer().ToString();
+                //Теперь очки только перывой карты дилера 
+                dealerScore.Text = gettotaldealerwithbolckcard().ToString();
+
+
+                HitButton.Visible = true;
+                StandButton.Visible = true;
+
+                if (blackjack.PlayerHasA()) //если в картах игрока имеется туз
+                {
+                    labelHasA.Text = "A(1 или 11)"; //выводим соотв текст 
+                }
+
+                info.Text = "Берите карты или остановитесь"; //проверка на 21 после начала игры 
+                if (blackjack.GetTotalPlayer() == 21) HitButton.Visible = false;
+
+                //Рисуем карты в начале игры
+                PlayerCardDraw();
+                DealerCardDraw();
+
+                DrawBlockedDealer();
             }
-           
-            //выводим на форму первые 2 карты дилера и игрока 
-            D1.Text = blackjack.DealerCards;
-            textboxPlayerCards.Text = blackjack.PlayerCards;
-            // их очки
-            playerScore.Text = blackjack.GetTotalPlayer().ToString();
-            //Теперь очки только перывой карты дилера 
-            dealerScore.Text = gettotaldealerwithbolckcard().ToString();
-
-
-            HitButton.Visible = true;
-            StandButton.Visible = true;
-
-            if (blackjack.PlayerHasA()) //если в картах игрока имеется туз
+            else
             {
-                labelHasA.Text = "A(1 или 11)"; //выводим соотв текст 
+                DialogResult result = MessageBox.Show("В колоде не достаточно карт для игры, желаете замешать новую колоду ? ",
+                                  "Ошибка",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Information,
+                                 MessageBoxDefaultButton.Button1 );
+
+                if(result == DialogResult.Yes)
+                {
+                   blackjack.Shuffle_new_Deck();
+                   Cards_left.Text = CardDeck.GetCardCount.ToString();  
+                }
+
+                //Time for mems dialogue with stupid user
+                #region
+                else 
+                {
+                    DialogResult resultt = MessageBox.Show("А вы уверены ? Может всетаки передумайте?", "Может нет, а?", MessageBoxButtons.YesNo);
+                    if (resultt == DialogResult.Yes)
+                    {
+                        blackjack.Shuffle_new_Deck();
+                        Cards_left.Text = CardDeck.GetCardCount.ToString();
+                    }
+                    else
+                    {
+                        DialogResult resulttt = MessageBox.Show("Упертый значит? Если сейчас нажмешь на ОК, то так и быть прошен, иначе я закрою приложение", "Ну и что, самый умный да ?", MessageBoxButtons.YesNo);
+                        if (resulttt == DialogResult.Yes)
+                        {
+                            blackjack.Shuffle_new_Deck();
+                            Cards_left.Text = CardDeck.GetCardCount.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("А я ведь предупреждал!!!", "Надо было слушать");
+                                this.Close();
+                        }
+                    }
+                }
+                #endregion
             }
-
-            info.Text = "Берите карты или остановитесь"; //проверка на 21 после начала игры 
-            if (blackjack.GetTotalPlayer() == 21) HitButton.Visible = false;
-
-            //Рисуем карты в начале игры
-            PlayerCardDraw();
-            DealerCardDraw();
-
-            DrawBlockedDealer();
 
         }
 
@@ -307,6 +352,14 @@ namespace BlackJack
                 newCard.BringToFront();// на верх всего
                 
         }
+
+        private bool CardLeftCheck()
+        {
+            if (Convert.ToInt64(Cards_left.Text) >= 11) return true;
+            else return false;
+
+        }
     }
 }
    //                                               ♥ We Love Anime♥
+  //                                        ♦Egor ogorodnev gnida axuevshaya♦ 

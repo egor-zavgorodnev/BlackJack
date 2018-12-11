@@ -79,3 +79,18 @@ F:\2 курс\Новиков\BlackJack\src\BlackJack\obj\Debug\BlackJack.Propert
 F:\2 курс\Новиков\BlackJack\src\BlackJack\obj\Debug\BlackJack.Split.resources
 F:\2 курс\Новиков\BlackJack\src\BlackJack\obj\Debug\BlackJack.StatsForm.resources
 F:\2 курс\Новиков\BlackJack\src\BlackJack\obj\Debug\BlackJack.csproj.GenerateResource.Cache
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\bin\Debug\BlackJack.exe.config
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\bin\Debug\BlackJack.exe
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\bin\Debug\BlackJack.pdb
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\bin\Debug\BlackJack.Game.dll
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\bin\Debug\BlackJack.Game.pdb
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\obj\Debug\BlackJack.csprojResolveAssemblyReference.cache
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\obj\Debug\BlackJack.BlackJack.resources
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\obj\Debug\BlackJack.Properties.Resources.resources
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\obj\Debug\BlackJack.Split.resources
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\obj\Debug\BlackJack.StatsForm.resources
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\obj\Debug\BlackJack.csproj.GenerateResource.cache
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\obj\Debug\BlackJack.csproj.CoreCompileInputs.cache
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\obj\Debug\BlackJack.csproj.CopyComplete
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\obj\Debug\BlackJack.exe
+C:\Users\Светлана\Desktop\BlackJack-master\src\BlackJack\obj\Debug\BlackJack.pdb

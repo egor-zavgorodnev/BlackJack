@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlackJack
 {
-    public class Game
+    public class Game 
     { 
         public int totaldealer = 0; //сумма очков дилера 
         protected int totalplayer = 0; //сумма очков игрока     
@@ -226,15 +226,15 @@ namespace BlackJack
         /// </summary> 
         public void GameStart()
         {
+            
+                _deck.Shuffle(CardCount)  ; //перемешиваем колоду и берем из нее 11 карт
 
-            _deck.Shuffle(CardCount); //перемешиваем колоду и берем из нее 11 карт
+                PlayerAddCard(PlayerCardsList);
+                PlayerAddCard(PlayerCardsList);
 
-            PlayerAddCard(PlayerCardsList);
-            PlayerAddCard(PlayerCardsList);
-
-            DealerAddCard(DealerCardsList);
-            DealerAddCard(DealerCardsList); //игроку и дилеру дается по одной карте   
-
+                DealerAddCard(DealerCardsList);
+                DealerAddCard(DealerCardsList); //игроку и дилеру дается по одной карте   
+            
             if (GetTotalDealer() == 22)
                 totaldealer = 2;
         }
@@ -313,9 +313,12 @@ namespace BlackJack
                     }
                 }
             }
-
         }
 
+        public void Shuffle_new_Deck()
+        {
+           _deck.Shuffle_new_deck();
+        }
 
     } 
 }

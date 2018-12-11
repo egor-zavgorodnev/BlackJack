@@ -32,6 +32,10 @@ namespace BlackJack
 
         static Random rnd = new Random(Environment.TickCount);
 
+        public static int GetCardCount { get; private set;}
+
+
+
         public bool IsEmpty() 
         {
             return cards.Count == 0;
@@ -58,8 +62,16 @@ namespace BlackJack
                 var card = initialDeck[index];
                 cards.Add(card); 
                 initialDeck.RemoveAt(index);
-            } 
+            }
+            GetCardCount = initialDeck.Count;
         }
+
+          public void Shuffle_new_deck()
+        {
+            initialDeck = Create_52_deck();
+            GetCardCount = initialDeck.Count;
+        }
+
 
         public Card PickCard() 
         {

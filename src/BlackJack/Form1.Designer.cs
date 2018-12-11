@@ -45,6 +45,8 @@
             this.buttonSplit = new System.Windows.Forms.Button();
             this.buttonStatistics = new System.Windows.Forms.Button();
             this.info = new System.Windows.Forms.Label();
+            this.Cards_left = new System.Windows.Forms.Label();
+            this.label_Cards_left = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -258,16 +260,42 @@
             this.info.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.info.Visible = false;
             // 
+            // Cards_left
+            // 
+            this.Cards_left.AutoSize = true;
+            this.Cards_left.BackColor = System.Drawing.Color.White;
+            this.Cards_left.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Cards_left.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Cards_left.Location = new System.Drawing.Point(59, 189);
+            this.Cards_left.Name = "Cards_left";
+            this.Cards_left.Size = new System.Drawing.Size(30, 23);
+            this.Cards_left.TabIndex = 30;
+            this.Cards_left.Text = "52";
+            this.Cards_left.Visible = false;
+            // 
+            // label_Cards_left
+            // 
+            this.label_Cards_left.AutoSize = true;
+            this.label_Cards_left.BackColor = System.Drawing.Color.Transparent;
+            this.label_Cards_left.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Cards_left.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_Cards_left.Location = new System.Drawing.Point(12, 156);
+            this.label_Cards_left.Name = "label_Cards_left";
+            this.label_Cards_left.Size = new System.Drawing.Size(128, 23);
+            this.label_Cards_left.TabIndex = 31;
+            this.label_Cards_left.Text = "Отсталось карт";
+            this.label_Cards_left.Visible = false;
+            // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.BackColor = System.Drawing.Color.Transparent;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.Black;
-            this.labelTitle.Location = new System.Drawing.Point(85, 128);
+            this.labelTitle.Location = new System.Drawing.Point(95, 119);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(485, 108);
-            this.labelTitle.TabIndex = 28;
+            this.labelTitle.TabIndex = 32;
             this.labelTitle.Text = "BlackJack";
             // 
             // BlackJack
@@ -277,8 +305,10 @@
             this.BackColor = System.Drawing.Color.OrangeRed;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(659, 402);
-            this.Controls.Add(this.labelSubtitle);
             this.Controls.Add(this.labelTitle);
+            this.Controls.Add(this.label_Cards_left);
+            this.Controls.Add(this.Cards_left);
+            this.Controls.Add(this.labelSubtitle);
             this.Controls.Add(this.buttonStatistics);
             this.Controls.Add(this.buttonSplit);
             this.Controls.Add(this.labelHasA);
@@ -321,9 +351,11 @@
         private System.Windows.Forms.Label labelHasA;
         public System.Windows.Forms.Button buttonSplit;
         private System.Windows.Forms.Label info;
-        private System.Windows.Forms.Label labelTitle;
         public System.Windows.Forms.Button newGame;
         public System.Windows.Forms.Button buttonStatistics;
+        private System.Windows.Forms.Label Cards_left;
+        private System.Windows.Forms.Label label_Cards_left;
+        private System.Windows.Forms.Label labelTitle;
     }
 }
 
