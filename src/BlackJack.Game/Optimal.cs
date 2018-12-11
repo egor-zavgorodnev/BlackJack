@@ -10,19 +10,16 @@ namespace BlackJack
     {
         //private static int[] c = new int[] { 10, 7, 4, 2, 9, 6 };
 
-        // private static int[] c = new int[] { 10, 7, 4, 2, 2, 6 };
+        public List<int> c = new List<int>() { 10, 7, 4, 2, 2, 6 }; 
 
-        private static int[] c = new int[] { 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
+        //private static int[] c = new int[] { 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
 
-        private int n = c.Length;
-         
+
         private List<int> BJList = new List<int>(); 
 
-        private int player = 0;
+        private int player = 0; 
         private int dealer = 0;
-
          
-
 
         private int cmp(int player1 ,int player2)
         {
@@ -35,10 +32,14 @@ namespace BlackJack
         }
 
         private int BJ(int i)
-        { 
-            if (BJList.Contains(i))
-                return BJList[i];
+        {
 
+
+            int n = c.Count - i;
+ 
+            if (BJList.Contains(i)) 
+                return BJList[i];
+             
             List<int> options = new List<int>() { 0 };
             
             if (n - i < 4) 
@@ -49,7 +50,7 @@ namespace BlackJack
             foreach (var p in Enumerable.Range(2, n - i - 2)) 
             { 
                 player = c[i] + c[i + 2];
-                /*
+                /* 
                  * Ошибка скорее всего в строчке ниже
                  * Аналогия на пайтоне  - sum(c[i+4:i+p+2])  
                  * выдает при первой итерации sum(c[4:4]) = 0. 0 прибавляется к первым двум картам
@@ -73,9 +74,10 @@ namespace BlackJack
                     options.Add(-1 + BJ(i + p + 2));
                     break;
                 }
-                int d1 = 0;
+                dealer = 0;
+                int d1 = 0; 
                 foreach (var d in Enumerable.Range(2,n - i - p))
-                {  
+                {
                     d1 = d;
                     dealer = c[i + 1] + c[i + 3];
                     for (int j = p + 2; j < i + p + d; j++) { dealer += c[i + j]; }
@@ -86,7 +88,7 @@ namespace BlackJack
                         break;
                     }
                 }
-                if (dealer > 21)
+                if (dealer > 21) 
                 {
                     System.Console.WriteLine("Dealer Bust");
                     dealer = 0;
@@ -97,12 +99,13 @@ namespace BlackJack
             }
             BJList.Add(options.Max()); 
             return options.Max();
-        }
+        } 
          
         public int GetWinsCount() 
-        {
-            System.Console.WriteLine("Array:");
-            for (int i = 0; i < c.Length; i++)
+        { 
+             
+            System.Console.WriteLine("Array:"); 
+            for (int i = 0; i < c.Count; i++)
             {
                 System.Console.Write(c[i] + " ");
             }
