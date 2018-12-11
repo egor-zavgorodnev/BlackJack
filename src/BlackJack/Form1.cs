@@ -73,6 +73,7 @@ namespace BlackJack
             labelSubtitle.Visible = false;
             label_Cards_left.Visible = true;
             Cards_left.Visible = true;
+
             if (CardLeftCheck())
             {
                 PlayerCardsRemoveAndBackToStartPosition(); DealerCardsRemoveAndBackToStartPosition(); //Очишаем лист с картами игрка  и дилера !!Востанавливаем позицию появления карт игрока и дилера
