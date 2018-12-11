@@ -1,15 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace BlackJack
 {
     public class Optimal   
     {
         //private static int[] c = new int[] { 10, 7, 4, 2, 9, 6 };
-              
-        private static int[] c = new int[] { 10, 7, 4, 2, 2, 6 };
-         
-        //private static int[] c = new int[] { 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
+
+        // private static int[] c = new int[] { 10, 7, 4, 2, 2, 6 };
+
+        private static int[] c = new int[] { 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
 
         private int n = c.Length;
          
@@ -51,13 +54,19 @@ namespace BlackJack
                  * Аналогия на пайтоне  - sum(c[i+4:i+p+2])  
                  * выдает при первой итерации sum(c[4:4]) = 0. 0 прибавляется к первым двум картам
                  * А цикл ниже на си-шарпе какого то хуя прибавляет элемент с[4] 
-                 * Крч, если в консоли первая запись будет равна player=14 , вместо 16 о все збс
+                 * Крч, если в консоли первая запись будет равна player=14 , вместо 16 то все збс
                  * */
-                for (int j = 4; j <= p + 2; j++)        
-                {      
-                    player += c[i + j];  
+                if (p == 2)
+                {
                     System.Console.WriteLine("Player=" + player);
-                };
+                }
+                else {
+                    for (int j = 4; j <= p + 2; j++)
+                    {
+                        player += (c[i + j]);
+                        System.Console.WriteLine("Player=" + player);
+                    };
+                }
                 if (player > 21) 
                 {
                     System.Console.WriteLine("Player Bust");
