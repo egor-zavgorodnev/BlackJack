@@ -37,3 +37,9 @@ F:\2 курс\Новиков\BlackJack\src\BlackJack.Game\bin\Debug\normnfkd.nlp
 F:\2 курс\Новиков\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.csprojResolveAssemblyReference.cache
 F:\2 курс\Новиков\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.dll
 F:\2 курс\Новиков\BlackJack\src\BlackJack.Game\obj\Debug\BlackJack.Game.pdb
+C:\dev\tstu\BlackJack-egorka99-13\src\BlackJack.Game\bin\Debug\BlackJack.Game.dll
+C:\dev\tstu\BlackJack-egorka99-13\src\BlackJack.Game\bin\Debug\BlackJack.Game.pdb
+C:\dev\tstu\BlackJack-egorka99-13\src\BlackJack.Game\obj\Debug\BlackJack.Game.csprojAssemblyReference.cache
+C:\dev\tstu\BlackJack-egorka99-13\src\BlackJack.Game\obj\Debug\BlackJack.Game.csproj.CoreCompileInputs.cache
+C:\dev\tstu\BlackJack-egorka99-13\src\BlackJack.Game\obj\Debug\BlackJack.Game.dll
+C:\dev\tstu\BlackJack-egorka99-13\src\BlackJack.Game\obj\Debug\BlackJack.Game.pdb
