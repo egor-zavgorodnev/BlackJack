@@ -45,7 +45,7 @@ namespace BlackJack
             return totalplayer;
         }
         /// <summary>
-        /// Получить очки игрока 
+        /// Получить очки игрока  
         /// </summary> 
         public int GetTotalDealer()
         {

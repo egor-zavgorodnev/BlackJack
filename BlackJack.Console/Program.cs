@@ -14,10 +14,12 @@ namespace BlackJack.Console
         { 
             Optimal opt = new Optimal();
              
-            System.Console.WriteLine(opt.GetWinsCount());
+            System.Console.WriteLine("Количество побед: " + opt.GetWinsCount());
+
+            System.Console.WriteLine("Ходы игрока: " + opt.GetStrategy());
             
             
-            
+               
 
             System.Console.ReadKey();
               
