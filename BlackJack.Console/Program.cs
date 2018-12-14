@@ -17,12 +17,32 @@ namespace BlackJack.Console
             System.Console.WriteLine("Количество побед: " + opt.GetWinsCount());
 
             System.Console.WriteLine("Ходы игрока: " + opt.GetStrategy());
-            
-            
-               
+           System.Console.WriteLine("Побед дилера: " + opt.dealer_wins);
+            System.Console.WriteLine("Побед игрока : " + opt.player_wins);
+            System.Console.WriteLine("Ничьих: " + opt.draws);
+
+            int[] c = new int[] {  1, 2, 3, 4, 6, 7 };
+            int player = 0;
+            int n = 6;
+            int i = 0;
+            for (int p = 2,j=4; p < n - i; p++)
+            {
+                player = c[i] + c[i + 2];
+                
+                    for (j = 4; j <= p + 2 && j < c.Length; j++)
+                    { 
+                      
+                        player += (c[i + j]);
+                   
+                    };
+                
+              //  System.Console.WriteLine("ПЭ " + p);
+            }
+           // System.Console.WriteLine("Player " + player);
 
             System.Console.ReadKey();
-              
+
+            
             /* var deck = new CardDeck();
              
              var card = new Card(); 
