@@ -224,6 +224,6 @@ namespace BlackJack
             return StrategyBJ(0);
         }
          
-        
+        //Egorka Lox
     }  
 } 
