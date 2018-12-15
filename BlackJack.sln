@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJack.Game", "src\Black
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJack.Console", "BlackJack.Console\BlackJack.Console.csproj", "{FDFB0662-7FF6-4988-B1BF-86E1E9A72895}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_Optimal", "UnitTest_Optimal\UnitTest_Optimal.csproj", "{62BB37F5-F626-4776-8C81-134EEB4F95F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTest_Optimal\UnitTests.csproj", "{62BB37F5-F626-4776-8C81-134EEB4F95F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

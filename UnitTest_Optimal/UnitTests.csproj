@@ -59,6 +59,10 @@
       <Project>{98109bc8-9ff9-43e7-a44b-5123f59bd013}</Project>
       <Name>BlackJack.Game</Name>
     </ProjectReference>
+    <ProjectReference Include="..\src\BlackJack\BlackJack.csproj">
+      <Project>{94ce6a3e-1794-4a34-b871-ebc1c6e110ff}</Project>
+      <Name>BlackJack</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
