@@ -7,7 +7,7 @@ namespace BlackJack
     {
         public List<Card> initialDeck = Create_52_deck();
 
-        public static List<Card> Create_52_deck()  
+        public static List<Card> Create_52_deck()   
         {
             var deck = new List<Card>();
             for (int i = 2; i <= Card.GetMaxPictureNumber(); i++)
@@ -21,7 +21,7 @@ namespace BlackJack
                 }
             }
             return deck;
-        }
+        } 
 
         public CardDeck() 
         {
@@ -67,29 +67,29 @@ namespace BlackJack
         }
 
           public void Shuffle_new_deck()
-        {
+          {
             initialDeck = Create_52_deck();
             GetCardCount = initialDeck.Count;
-        }
+          } 
 
 
         public Card PickCard() 
         {
             CheckNotEmpty();  
 
-            var card = cards[0];
+            var card = cards[0]; 
             cards.RemoveAt(0);
             return card;
         }
          
         public Card PickCard(int i)
         {
-            CheckNotEmpty();
+            CheckNotEmpty(); 
               
             var card = cards[i]; 
-            cards.RemoveAt(i);
+            //cards.RemoveAt(i);
             return card;
-        }  
+        }   
 
         private void CheckNotEmpty() 
         {
@@ -99,7 +99,7 @@ namespace BlackJack
             }
         }
     }
-
+     
     public class FixedCardDeck
     {
         public static List<int> cards = new List<int>  //колода карт 

@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BlackJack
-{
-    public class Game 
-    { 
-        public int totaldealer = 0; //сумма очков дилера 
+﻿using System; 
+using System.Collections.Generic; 
+using System.Linq; 
+using System.Text; 
+using System.Threading.Tasks; 
+ 
+namespace BlackJack 
+{ 
+    public class Game  
+    {  
+        public int totaldealer = 0; //сумма очков дилера  
         protected int totalplayer = 0; //сумма очков игрока     
 
         public string DealerCards { get; protected set; } //карты дилера в строке 
